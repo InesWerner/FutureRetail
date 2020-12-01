@@ -1,0 +1,38 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "Hey", "Hallo", "Hello"],
+         "responses": ["Hallo, wie kann ich dir helfen?", "Es freut mich dich wieder zu sehen!", "Hallo, kann ich dir helfen?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Tschau", "Bye", "Auf Wiedersehen"],
+         "responses": ["Bis bald.", "Hab noch einen schönen Tag.", "Machs gut."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Danke!", "Vielen Dank!", "Das war hilfreich!", "Super, danke!", "Danke, für deine Hilfe!"],
+         "responses": ["Es freut mich, dass ich helfen konnte.", "Sehr gerne.", "Immer wieder gerne.", "Ich helfe dir immer gerne."],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Entschuldige, ich habe dich nicht verstanden.", "Bitte stelle deine Frage anders.", "Ich bin mir nicht sicher, ob ich dich richtig verstanden habe."],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["Wie kannst du mir helfen?", "Was kannst du?", "Wer bist du?"],
+         "responses": ["Ich bin ein Bot und helfe dir bei deinem Drogerie-Einkauf!", "Ich bin ein Bot und helfe dir bei deinem Einkauf in der Drogerie."],
+         "context": [""]
+        },
+        {"tag": "recommendation",
+         "patterns": ["geeignetes Shampoo", "Welches Shampoo ist für mich geeignet?", "Welches Shampoo passt zu mir", "Shampoo Empfehlung", "Welches Shampoo passt zu meiner Haarsturktur?"],
+         "responses": ["x", "y"],
+         "context": [""]
+        },
+        {"tag": "information",
+         "patterns": ["Welche Inhaltsstoffe hat das Shampoo?", "Wie teuer ist das Shampoo?", "Preis des Shampoos"],
+         "responses": ["Shampoo hat x Inhaltsstoffe und kostet x Euro", "Das Produkt kostet x Eurp und besteht aus x."],
+         "context": [""]
+        }
+   ]
+}
