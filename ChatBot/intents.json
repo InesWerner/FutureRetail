@@ -1,16 +1,16 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "Hey", "Hallo", "Hello"],
-         "responses": ["Hallo, wie kann ich dir helfen?", "Es freut mich dich wieder zu sehen!", "Hallo, kann ich dir helfen?"],
+         "patterns": ["Hi", "Hey", "Hallo", "Hello", "Servus", "Hii"],
+         "responses": ["Hallo ich bin Charlie, wie kann ich dir helfen?", "Es freut mich dich wieder zu sehen!", "Hallo, kann ich dir helfen?"],
          "context": [""]
         },
         {"tag": "goodbye",
          "patterns": ["Tschau", "Bye", "Auf Wiedersehen"],
-         "responses": ["Bis bald.", "Hab noch einen schönen Tag.", "Machs gut."],
+         "responses": ["Bis bald.", "Hab noch einen tollen Tag.", "Machs gut."],
          "context": [""]
         },
         {"tag": "thanks",
-         "patterns": ["Danke!", "Vielen Dank!", "Das war hilfreich!", "Super, danke!", "Danke, für deine Hilfe!"],
+         "patterns": ["Danke!", "Vielen Dank!", "Das war hilfreich!", "Super, danke!", "Danke, für deine Hilfe!", "Thx", "Thanks"],
          "responses": ["Es freut mich, dass ich helfen konnte.", "Sehr gerne.", "Immer wieder gerne.", "Ich helfe dir immer gerne."],
          "context": [""]
         },
@@ -26,13 +26,28 @@
         },
         {"tag": "recommendation",
          "patterns": ["geeignetes Shampoo", "Welches Shampoo ist für mich geeignet?", "Welches Shampoo passt zu mir", "Shampoo Empfehlung", "Welches Shampoo passt zu meiner Haarsturktur?"],
-         "responses": ["x", "y"],
+         "responses": ["Dein Link zu deinem geeigneten Shampoo: \n  https://www.dm.de/langhaarmaedchen-shampoo-intense-repair-p4010355409799.html\n"],
          "context": [""]
         },
         {"tag": "information",
-         "patterns": ["Welche Inhaltsstoffe hat das Shampoo?", "Wie teuer ist das Shampoo?", "Preis des Shampoos"],
-         "responses": ["Shampoo hat x Inhaltsstoffe und kostet x Euro", "Das Produkt kostet x Eurp und besteht aus x."],
+         "patterns": ["Welche Inhaltsstoffe?", "vegan"],
+         "responses": ["\n Vegane Inhaltsstoffe: \n Aqua, Sodium Laureth Sulfate, Cocamidopropyl Betaine, PEG-4 Rapeseedamide, Glycerin, Panthenol, Propylene Glycol \n "],
+         "context": [""]
+        },
+        {"tag": "preis",
+         "patterns": [ "Wie teuer ist es?", "Preis"],
+         "responses": ["4,95 Euro \n 300 ml \n (16,50 Euro je 1 l)"],
+         "context": [""]
+        },
+        {"tag": "standort",
+         "patterns": ["Wo ist die nächste Filliale?", "Wo ist eine Drogerie in der Nähe?", "Standort"],
+         "responses": ["Bitte gebe deine Postleitzahl ein"],
+         "context": [""]
+        },
+          {"tag": "Postleitzahl",
+         "patterns": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+         "responses": ["Deine Drogerie befindet sich im Umkreis von 5km \n Schmidstr. 7, Stuttgart"],
          "context": [""]
         }
-   ]
+]
 }
