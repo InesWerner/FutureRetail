@@ -1,3 +1,5 @@
+# ----------------------------------- Association Analysis with a small Sample Dataset ------------------------------------
+
 import pandas as pd
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori
@@ -19,7 +21,7 @@ dataset = [ ['Lippenstift Cherry'], ['Lippenstift Cherry'],['Lippenstift Cherry'
 #print(dataset)
 
 # TransactionEncoder transforms the dataset into an array with boolean values for the sake of memory efficiency
-# Source: http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/
+# Source: Raschka, Sebastian (2020). TransactionEncoder. http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/
 te = TransactionEncoder()
 te_array = te.fit(dataset).transform(dataset)
 # The dataset is saved in a DataFrame
@@ -30,12 +32,15 @@ print(df)
 print("----------------- APRIORI Algorithm -------------------")
 
 # Run through the apriori algorithm
-frequent_itemsets_ap = apriori(df, min_support=0.0045, use_colnames=True)
+frequent_itemsets_ap = apriori(df, min_support=0.1, use_colnames=True)
 #frequent_itemsets_ap['length'] = frequent_itemsets_ap['itemsets'].apply(lambda x: len(x))
 print(frequent_itemsets_ap)
 
 # Form the association rules with the metric confidence
-rules_ap = association_rules(frequent_itemsets_ap, metric="confidence", min_threshold=0.8)
+# high conviction value means that the consequent is highly depending on the antecendent.
+# Perfect confidence score = denominator becomes 0 (due to 1 - 1) or is defined as "inf"
+# Source: Raschka, Sebastian (2021). Association Rules Generation from Frequent Itemsets. http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
+rules_ap = association_rules(frequent_itemsets_ap, metric="confidence", min_threshold=0.7)
 print("Association rules: ")
 print(rules_ap)
 
@@ -44,13 +49,19 @@ print(rules_ap)
 print("----------------- FP-Growth Algorithm -----------------")
 
 # Run through the fp growth algorithm
-frequent_itemsets_fp=fpgrowth(df, min_support=0.0045, use_colnames=True)
+frequent_itemsets_fp=fpgrowth(df, min_support=0.1, use_colnames=True)
 print(frequent_itemsets_fp)
 
 # Form the association rules with the metric confidence
-rules_fp = association_rules(frequent_itemsets_fp, metric="confidence", min_threshold=0.8)
+# high conviction value means that the consequent is highly depending on the antecendent.
+# Perfect confidence score = denominator becomes 0 (due to 1 - 1) or is defined as "inf"
+# Source: Raschka, Sebastian (2021). Association Rules Generation from Frequent Itemsets. http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
+rules_fp = association_rules(frequent_itemsets_fp, metric="confidence", min_threshold=0.7)
 print("Association rules: ")
-print(rules_fp)
+print(rules_fp.head(10))
+
+
+
 
 
 

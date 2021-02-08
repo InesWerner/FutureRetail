@@ -1,3 +1,6 @@
+# ---------------------------------- Association Analysis ---------------------------------------
+# Source: Malik, Usman (2020). Association Rule Mining via Apriori Algorithm in Python. https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python/
+
 import pandas as pd
 from apyori import apriori
 

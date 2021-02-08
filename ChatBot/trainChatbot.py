@@ -1,4 +1,5 @@
-# ---------------------------- Chatbot training file -------------------------------
+# ------------------------------ Chatbot training file --------------------------------
+# Source: Thkaur, Shivashish (2020). Build Your First Python Chatbot Project. https://dzone.com/articles/python-chatbot-project-build-your-first-python-pro
 
 import numpy as np
 from keras.models import Sequential
@@ -20,6 +21,7 @@ ignore_letters = ['!', '?', ',', '.']
 intents_file = open('intents.json').read()
 intents = json.loads(intents_file)
 
+
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         # Tokenization of words
@@ -34,13 +36,13 @@ print(documents)
 # Lemmatization and lower casing each word, remove duplicates
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_letters]
 words = sorted(list(set(words)))
-
 classes = sorted(list(set(classes)))
 # The documents are a combination between patterns and intents
 print(len(documents), "documents")
 # The classes are intents
 print(len(classes), "classes", classes)
 print(len(words), "unique lemmatized words", words)
+
 
 # Save into a pickle file
 pickle.dump(words, open('words.pkl', 'wb'))
@@ -72,6 +74,7 @@ training = np.array(training)
 train_x = list(training[:, 0])
 train_y = list(training[:, 1])
 print("Training data created")
+
 
 # Create chatbot_model - 3 layers. First layer 126 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
 chatbot_model = Sequential()

@@ -1,4 +1,6 @@
 # ---------------------------- Chatbot Gui -------------------------------
+# Source: Thkaur, Shivashish (2020). Build Your First Python Chatbot Project. https://dzone.com/articles/python-chatbot-project-build-your-first-python-pro
+
 
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -97,19 +99,22 @@ root.title("Charlie")
 root.geometry("400x500")
 root.resizable(width=FALSE, height=FALSE)
 
+
 # Create Chat window
 ChatBox = Text(root, bd=0, bg="#E8E8E8", height="8", width="50", font="Arial")
-
 ChatBox.config(state=DISABLED)
+
 
 # Scrollbar for the Chat window
 scrollbar = Scrollbar(root, command=ChatBox.yview, cursor="heart")
 ChatBox['yscrollcommand'] = scrollbar.set
 
+
 # Button to send message
 SendButton = Button(root, font=("Arial", 10, 'bold'), text='Frag \n Charlie!', width="12", height=5,
                     bd=0, bg='#BEBEBE', activebackground="#DCDCDC", fg='#000000',
                     command=send)
+
 
 # Box to enter a message
 EntryBox = Text(root, bd=0, bg="white", width="29", height="5", font=("Arial", 10))
