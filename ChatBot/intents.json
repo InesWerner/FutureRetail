@@ -40,7 +40,7 @@
          "context": [""]
         },
         {"tag": "standort",
-         "patterns": ["Wo ist die nächste Filliale?", "Wo ist eine Drogerie in der Nähe?", "Standort"],
+         "patterns": ["Wo ist die nächste Filliale?", "Wo ist eine Drogerie in der Nähe?", "Standort", "Wo ist der nächste DM?"],
          "responses": ["Bitte gebe deine Postleitzahl ein"],
          "context": [""]
         },
